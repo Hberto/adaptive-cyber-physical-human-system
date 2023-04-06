@@ -1,5 +1,5 @@
 from typing import List
-import networkx as nx #ToDo: Fehler
+import networkx as nx # ToDo: install package
 from agent import Consumer, Producer
 
 

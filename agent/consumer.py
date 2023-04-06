@@ -9,7 +9,7 @@ class Consumer(Participant):
         self._demand = demand
 
     def announce_bid(self):
-        raise NotImplementedError
+        raise NotImplementedError # ToDo: Impl
 
     def pay(self):
         self._orders = []

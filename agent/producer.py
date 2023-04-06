@@ -19,13 +19,13 @@ class Producer(Participant):
         self._profit = 0
 
     def announce_bid(self):
-        raise NotImplementedError
+        raise NotImplementedError # ToDo: Impl
 
     def process_orders(self):
-        raise NotImplementedError
+        raise NotImplementedError # ToDo: Impl
 
     def compute_cost_and_update_profit(self):
-        raise NotImplementedError
+        raise NotImplementedError # ToDo: Impl
 
     def adjust_production(self):
-        raise NotImplementedError
+        raise NotImplementedError # ToDo: Impl

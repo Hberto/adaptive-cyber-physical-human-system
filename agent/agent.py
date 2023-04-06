@@ -16,7 +16,7 @@ class Participant(Agent):
         self._bid = None
 
     def announce_bid(self) -> Bid:
-        raise NotImplementedError
+        raise NotImplementedError  # ToDo: Impl
 
     def add_order(self, order: Order):
         self._orders.append(order)
