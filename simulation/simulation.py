@@ -34,12 +34,9 @@ class Simulation(object):
                 producer.compute_cost_and_update_profit()
                 producer.adjust_production()
 
-            for i, consumer in enumerate(self._market.network().consumers()):
-                print("Consumer " + str(i) + " Balance: " + str(consumer.getBalance()))
-
             for i, producer in enumerate(self._market.network().producers()):
-                print("Producer " + str(i) + " Balance: " + str(producer.getBalance()))
-
+                print("Producer " + str(i) + " Balance: " + str(producer.getBalance()) + ", Storage: " + str(producer._storage))
+            print("End round " + str(t))
         return self._calculate_statistics()
 
     def _calculate_statistics(self) -> Statistics:

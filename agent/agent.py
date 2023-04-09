@@ -14,7 +14,7 @@ class Participant(Agent):
     def __init__(self):
         self._orders = []
         self._bid = None
-        self._balance = 0
+        self._balance = 1000
 
     def announce_bid(self) -> Bid:
         raise NotImplementedError  # ToDo: Impl
