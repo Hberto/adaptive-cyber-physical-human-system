@@ -1,1 +1,1 @@
-from market_network.market_network import MarketNetwork
+from .market_network import MarketNetwork

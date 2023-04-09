@@ -14,6 +14,7 @@ class Participant(Agent):
     def __init__(self):
         self._orders = []
         self._bid = None
+        self._balance = 0
 
     def announce_bid(self) -> Bid:
         raise NotImplementedError  # ToDo: Impl
@@ -23,3 +24,6 @@ class Participant(Agent):
 
     def bid(self) -> Bid:
         return self._bid
+
+    def getBalance(self):
+        return self._balance

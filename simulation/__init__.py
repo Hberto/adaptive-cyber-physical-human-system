@@ -1,2 +1,2 @@
-from simulation.simulation import Simulation
-from simulation.statistics import Statistics
+from .simulation import Simulation
+from .statistics import Statistics

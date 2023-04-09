@@ -1,7 +1,10 @@
-from agent.order import Order
-from agent.bid import Bid
-from agent.consumer import Consumer
-from agent.producer import Producer
-from agent.agent import Participant
-from agent.market import Market
-from agent.agent import Agent
+
+from .order import Order
+from .bid import Bid
+from .consumer import Consumer
+from .producer import Producer
+from .agent import Participant
+from .market import Market
+from .agent import Agent
+
+
