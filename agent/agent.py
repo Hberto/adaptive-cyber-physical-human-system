@@ -14,12 +14,18 @@ class Participant(Agent):
     def __init__(self):
         self._orders = []
         self._bid = None
+        self._balance = 100
 
     def announce_bid(self) -> Bid:
-        raise NotImplementedError  # ToDo: Impl
+        print("Superclass Participant: Announce_Bid called")
+        pass
 
     def add_order(self, order: Order):
         self._orders.append(order)
 
     def bid(self) -> Bid:
         return self._bid
+
+    @property
+    def balance(self):
+        return self._balance
