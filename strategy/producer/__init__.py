@@ -1,0 +1,1 @@
+from strategy.producer import simple_prod
