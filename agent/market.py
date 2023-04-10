@@ -19,7 +19,6 @@ class Market(Agent):
         producers = self._network.producers()
 
         amount_needed = 0
-        lowest_bid = 0
         consumer_bid = []
         for c in consumers:
             consumer_bid.append((c.bid().amount, c.bid().unit_price, c))
@@ -38,7 +37,7 @@ class Market(Agent):
 
         for i in range(0, len(producer_bid)):
             p_bid = producer_bid[i]
-            while p_bid[1] > consumer_bid[0][1]:
+            while p_bid[1] > consumer_bid[0][1] and amount < amount_needed:
                 amount_needed -= consumer_bid[0][0]
                 consumer_bid.pop(0)
 
@@ -59,6 +58,8 @@ class Market(Agent):
             else:
                 amount += p_bid[0]
                 price = p_bid[1]
+                if amount > amount_needed:
+                    break
 
         for c_bid in consumer_bid:
             c = c_bid[2]
