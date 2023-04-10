@@ -1,5 +1,5 @@
 from typing import List
-import networkx as nx # ToDo: install package
+import networkx as nx  # ToDo: install package
 from agent import Consumer, Producer
 
 
@@ -21,10 +21,10 @@ class MarketNetwork(object):
         consumers: List[Consumer] = []
         producers: List[Producer] = []
         for n in self._graph.nodes():
-            if isinstance(n, Producer):
+            if issubclass(n.__class__, Producer):
                 producers.append(n)
                 continue
-            if isinstance(n, Consumer):
+            if issubclass(n.__class__, Consumer):
                 consumers.append(n)
                 continue
             raise ValueError("Unsupported participant type!")

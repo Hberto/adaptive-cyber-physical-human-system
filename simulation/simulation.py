@@ -1,14 +1,13 @@
 import random
 
 from agent import Market
-from market_network import MarketNetwork
 from simulation.statistics import Statistics
 
 
 class Simulation(object):
     def __init__(self,
                  market: Market,
-                 rounds=1,
+                 rounds=5,
                  consume_distribution=10.0
                  ):
         self._rounds = rounds
@@ -35,7 +34,15 @@ class Simulation(object):
                 producer.compute_cost_and_update_profit()
                 producer.adjust_production()
 
+            for i, producer in enumerate(self._market.network().producers()):
+                print("Producer " + str(i) + " Balance: " + str(producer.getBalance()) + ", Storage: " + str(producer._storage))
+            print("End round " + str(t))
         return self._calculate_statistics()
 
     def _calculate_statistics(self) -> Statistics:
+        #for i, consumer in enumerate(self._market.network().consumers()):
+         #   print("Consumer " + str(i) + " Balance: " + str(consumer.getBalance()))
+
+        #for i, producer in enumerate(self._market.network().producers()):
+           # print("Producer " + str(i) + " Balance: " + str(producer.getBalance()))
         return Statistics(self._rounds, self._consume_distribution)
