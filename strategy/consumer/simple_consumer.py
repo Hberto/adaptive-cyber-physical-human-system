@@ -17,7 +17,9 @@ class Simple_consumer(agent.Consumer):
         costs = 0
         for element in self._orders:
             costs += element.amount * element.price
-            self.demand -= element.amount
-        if self.demand < 12:
-            self.demand = 12
+            if self.demand - element.amount < 0:
+                self.demand = 12
+            else:
+                self.demand -= element.amount
+
         self._balance -= costs
