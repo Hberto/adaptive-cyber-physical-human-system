@@ -5,7 +5,7 @@ class Producer(Participant):
     """Base class for all producer agents"""
 
     def __init__(self, operating_cost=1, start_cost=1, shutdown_cost=1, min_performance=1, current_performance=1,
-                 max_performance=1, storage_capacity=1):
+                 max_performance=1, storage_capacity=100):
         super().__init__()
         self._operating_cost = operating_cost
         self._start_cost = start_cost
