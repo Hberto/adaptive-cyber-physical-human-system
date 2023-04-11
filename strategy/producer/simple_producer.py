@@ -1,10 +1,12 @@
+import random
+
 import agent
 
 class Simple_producer(agent.Producer):
     """A simple producer class that inherits from Producer"""
 
-    def __init__(self, operating_cost=20, start_cost=2, shutdown_cost=2, min_performance=0, current_performance=1000,
-                 max_performance=100000, storage_capacity=10000):
+    def __init__(self, operating_cost=20, start_cost=2, shutdown_cost=2, min_performance=0, current_performance=10,
+                 max_performance=100, storage_capacity=100):
         super().__init__(operating_cost=operating_cost, start_cost=start_cost, shutdown_cost=shutdown_cost,
                          min_performance=min_performance, current_performance=current_performance,
                          max_performance=max_performance, storage_capacity=storage_capacity)
@@ -16,6 +18,8 @@ class Simple_producer(agent.Producer):
         products = self._storage + self._current_performance
         #self._unit_price = (costs + target_profit) / products
         self._bid = agent.Bid(self._storage + self._current_performance, self._unit_price)
+
+
 
 
     def process_orders(self):

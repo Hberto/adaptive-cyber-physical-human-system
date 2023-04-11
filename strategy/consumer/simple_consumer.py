@@ -1,3 +1,5 @@
+import random
+
 import agent
 
 class Simple_consumer(agent.Consumer):
@@ -9,6 +11,7 @@ class Simple_consumer(agent.Consumer):
 
     def announce_bid(self):
         self._bid = agent.Bid(amount=self.demand, unit_price=self._unit_price)
+        
 
     def pay(self):
         costs = 0
