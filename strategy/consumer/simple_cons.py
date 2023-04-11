@@ -1,6 +1,7 @@
 from agent.consumer import Consumer
 from agent.bid import Bid
 import random
+from agent.market import Market
 
 OPERATING_COSTS = 40
 
@@ -34,11 +35,11 @@ class SimpleStrategy(Consumer):
 
     def pay(self):
         """consumers pay products and fees"""
-        # ToDo: add fees: transport of product etc.
+        # ToDo: add fees: transport of product, marktet fee etc.
         print("SimpleConsumerStrategy: pay")
         for element in self._orders:
             self._costs += element.amount * element.unit_price
-        self._balance -= self._costs
+        self._balance -= self._costs - Market.MARKET_FEE
 
     def get_total_costs(self):
         return self._costs
