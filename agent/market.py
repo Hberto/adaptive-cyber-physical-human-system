@@ -64,10 +64,12 @@ class Market(Agent):
         for c_bid in consumer_bid:
             c = c_bid[2]
             bid = c.bid()
+
             c.add_order(Order(amount=bid.amount, unit_price=price))
 
         amount_produced = 0
         for p_bid in producer_bid:
+
             if amount_produced + p_bid[0] < amount_needed:
                 amount_produced += p_bid[0]
                 p = p_bid[2]
@@ -77,3 +79,4 @@ class Market(Agent):
                 p = p_bid[2]
                 p.add_order(Order(amount=amount_needed - amount_produced, unit_price=price))
                 amount_produced = amount_needed
+

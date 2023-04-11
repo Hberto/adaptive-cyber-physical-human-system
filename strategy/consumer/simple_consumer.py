@@ -11,10 +11,13 @@ class Simple_consumer(agent.Consumer):
 
     def announce_bid(self):
         self._bid = agent.Bid(amount=self.demand, unit_price=self._unit_price)
-        
+
 
     def pay(self):
         costs = 0
         for element in self._orders:
             costs += element.amount * element.price
+            self.demand -= element.amount
+        if self.demand < 12:
+            self.demand = 12
         self._balance -= costs

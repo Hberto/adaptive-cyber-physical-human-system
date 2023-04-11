@@ -35,6 +35,7 @@ class Simple_producer(agent.Producer):
 
 
 
+
     def compute_cost_and_update_profit(self):
         self._balance += (self._unit_price * self._calculate_total_amount()) - self._calculate_costs()
         self._orders = []
