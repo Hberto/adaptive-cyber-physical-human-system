@@ -1,9 +1,10 @@
 import random
 
 import networkx as nx
-
 import agent
 import market_network
+from strategy.consumer import simple_cons
+from strategy.producer import simple_prod
 
 PARTICIPANTS = 10
 P_PROD = 0.5
@@ -19,8 +20,8 @@ def get_network_configuration():
 
 
 def create_network(n_producers, n_consumers, weights) -> market_network.MarketNetwork:
-    producers = [agent.Producer() for _ in range(n_producers)]
-    consumers = [agent.Consumer() for _ in range(n_consumers)]
+    producers = [simple_prod for _ in range(n_producers)]
+    consumers = [simple_cons for _ in range(n_consumers)]
     g: nx.Graph = nx.complete_bipartite_graph(producers, consumers)
     for (u, v, w), weight in zip(g.edges(data=True), weights):
         w['weight'] = weight
