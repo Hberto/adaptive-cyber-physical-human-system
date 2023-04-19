@@ -1,7 +1,7 @@
 from market import Market
-from simulation import Simulation
 from powergrid.team03.consumer import Team03Consumer
 from powergrid.team03.producer import Team03Producer
+from simulation import Simulation
 
 ROUNDS = 5
 
