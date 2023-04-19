@@ -1,7 +1,7 @@
 import random
 
 from agent import Market
-from simulation.statistics import Statistics
+from simulation_old.statistics import Statistics
 
 
 class Simulation(object):
