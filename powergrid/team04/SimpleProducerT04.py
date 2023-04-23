@@ -27,7 +27,6 @@ class Team04Producer(BaseProducer):
         # Speicher einbauen
         # Auf den Market Response reagieren
         # Balance beachten
-        # initial order beachten
 
         # ToDo: adjust normal case and else - basic impl
         """
@@ -59,6 +58,13 @@ class Team04Producer(BaseProducer):
         self._balance += self._calculate_total_amount_my_sell() - self._calculate_costs()
 
     def adjust_production(self) -> None:
+        """
+        if self._current_performance < self._max_performance:
+            self._current_performance += self._up_rate_limit
+
+        if self._current_performance > self._max_performance:
+            self._current_performance = self._up_rate_limit
+        """
         pass
 
     def _calculate_costs(self) -> int:
@@ -66,3 +72,6 @@ class Team04Producer(BaseProducer):
 
     def _calculate_total_amount_my_sell(self) -> int:
         return self._market_response.actual_quantity * self._market_response.market_unit_price
+
+    def update_storage(self) -> None:
+        print("Producer Agent id: %s , Current storage: %s, Balance: %s" % (self.agent_id, self._storage, self._balance))
