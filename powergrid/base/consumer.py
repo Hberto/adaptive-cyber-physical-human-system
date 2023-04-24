@@ -15,6 +15,10 @@ class BaseConsumer(Agent):
         """
         super().__init__(agent_id)
 
+    @property
+    def demand(self):
+        return self.current_order
+
     def get_demand(self) -> Order:
         """
         Returns the current order (demand) for the simulation round

@@ -22,6 +22,10 @@ class BaseProducer(Agent):
         """
         ...
 
+    @property
+    def bid(self):
+        return self.current_order
+
     def announce_bid(self) -> None:
         """
         Calculates the bid of this producer in the simulation round.
