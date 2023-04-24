@@ -18,6 +18,10 @@ class Agent:
         self._market_response: MarketResponse = MarketResponse()
         self._storage = 0
 
+    @property
+    def current_order(self):
+        return self._current_order
+    
     def set_market_response(self, market_response: MarketResponse):
         """
         Gets called by the market to notify the agent about the result of the market clearance
